@@ -37,4 +37,13 @@ public class ManagerProducto {
 		}
 		return encontrados;
 	}
+	
+	public static void add(Producto p){
+		productos.add(p);
+	}
+	
+	public static void modificar(Producto p){
+		
+	}
+	
 }

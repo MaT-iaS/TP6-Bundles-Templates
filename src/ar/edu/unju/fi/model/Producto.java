@@ -12,7 +12,9 @@ public class Producto {
 	private Double precioFardo;
 	private Integer stock;
 	private String estado;
-
+	
+	public Producto() {
+	}
 	public Producto(Integer codigo, String nombre, String descripcion,String tamanio, Date fechaVencimiento, Double precioUnitario, Double precioFardo, Integer stock, String estado) {
 		super();
 		this.codigo = codigo;

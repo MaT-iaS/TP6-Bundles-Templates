@@ -21,17 +21,18 @@
 		      	</h:inputText>
 		      	<h:message for="codigo" styleClass="error" />
 		
-		 		<h:outputText value="#{msg.label_nombre_prod}"/>
+		 		<h:outputText value="#{msg.label_nombre}"/>
 		      	<h:inputText id="nombre" value="#{productListBean.nombre}" /><br/>      	
 		      	
-		      	<h:outputText value="#{msg.label_estado_prod}"/>
+		      	<h:outputText value="#{msg.label_estado}"/>
 		      	<h:selectOneMenu value="#{productListBean.estado}">
 		      		<f:selectItem itemValue="TODO" itemLabel="#{msg.menu_estado_todo}"/>
 		      		<f:selectItem itemValue="DISPONIBLE" itemLabel="#{msg.menu_estado_disponible}"/>
 		      		<f:selectItem itemValue="NO DISPONIBLE" itemLabel="#{msg.menu_estado_nodisponible}"/>
 		      	</h:selectOneMenu>
-		        <h:commandButton id="submit" action="#{productListBean.search}"  value="#{msg.btn_buscar_prod}"/> 
 			</h:panelGrid>
+			<h:commandButton id="submit" action="#{productListBean.search}"  value="#{msg.btn_buscar_prod}"/> 
+			<h:commandButton id="add" action="#{altaProdBean.preInsert}"  value="#{msg.btn_nuevo_prod}"/> 
 			
 			<h:dataTable id="products" value="#{productListBean.productList}" var="x">
 				<h:column >

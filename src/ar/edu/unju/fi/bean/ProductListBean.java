@@ -31,6 +31,7 @@ public class ProductListBean implements Serializable{
 	 * @return
 	 */
 	public String search(){
+		System.out.println("-------Busqueda");
 		if(codigo.equals(0) && nombre.isEmpty() && estado.equals("TODO")){
 			productList = ManagerProducto.productos;
 		}else{

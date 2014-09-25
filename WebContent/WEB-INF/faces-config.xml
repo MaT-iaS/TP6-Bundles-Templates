@@ -18,5 +18,8 @@
 		</resource-bundle>
 	</application>
 	    
-
+<!-- 	<validator> -->
+<!-- 		<validator-id>validarProducto</validator-id> -->
+<!-- 		<validator-class>ar.edu.unju.fi.bean.AltaProdBean</validator-class> -->
+<!-- 	</validator> -->
 </faces-config>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<ui:composition template="/templates/template.xhtml">
+		<ui:define name="header">
+			<h:outputText value="#{msg.title_gestion}"/>
+		</ui:define>
+		<ui:define name="content">
+			<center>
+				<h:form>
+					<h:panelGrid columns="6"  >
+<!-- 						CODIGO -->
+						<h:outputText value="#{msg.label_codigo}"/>
+						<h:inputText id="campoCodigo" value="#{altaProdBean.producto.codigo}"/> 
+
+<!-- 						NOMBRE -->
+					    <h:outputText value="#{msg.label_nombre}"/>
+					    <h:inputText value="#{altaProdBean.producto.nombre}"/>
+					    
+<!-- 					    DESCRIPCION -->
+					    <h:outputText value="#{msg.label_desc}"/>
+					    <h:inputText value="#{altaProdBean.producto.descripcion}"/>
+					    
+<!-- 					    TAMAÑO -->
+					    <h:outputText value="#{msg.label_tamanio}"/>
+					    <h:inputText value="#{altaProdBean.producto.tamanio}"/>
+					    
+<!--				 	    FECHA VENCIMIENTO -->
+					    <h:outputText value="#{msg.label_fvenc}"/>
+					    <h:inputText id="campoFecha" value="#{altaProdBean.producto.fechaVencimiento}">
+					    	<f:convertDateTime pattern="dd-MM-yyyy"></f:convertDateTime>
+					    </h:inputText>
+					    
+<!-- 						PRECIO UNIT -->
+						<h:outputText value="#{msg.label_punit}"/>
+						<h:inputText id="campoPrecioUnit" value="#{altaProdBean.producto.precioUnitario}"/>
+						
+<!-- 					    PRECIO FARDO -->
+					    <h:outputText value="#{msg.label_pfardo}"/>
+						<h:inputText id="campoPrecioFardo" value="#{altaProdBean.producto.precioFardo}"/>
+						
+<!-- 					    STOCK -->
+					    <h:outputText value="#{msg.label_stock}"/>
+					    <h:inputText value="#{altaProdBean.producto.stock}"/>
+					    
+<!-- 					    ESTADO -->
+						<h:outputText value="#{msg.label_estado}"/>
+						<h:selectOneMenu value="#{altaProdBean.producto.estado}">
+							<f:selectItem itemLabel="#{msg.menu_estado_disponible}" itemValue="DISPONIBLE"/>
+							<f:selectItem itemLabel="#{msg.menu_estado_nodisponible}" itemValue="NO DISPONIBLE"/>
+						</h:selectOneMenu>
+					</h:panelGrid>
+					<h:commandButton value="aceptar" action="#{altaProdBean.aceptar}"/>
+					
+				</h:form>
+				
+			</center>
+		</ui:define>
+	</ui:composition>
+</html>
