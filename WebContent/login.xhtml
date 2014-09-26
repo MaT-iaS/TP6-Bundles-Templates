@@ -23,7 +23,7 @@
 				<h:outputLabel  value="#{msg.label_password}:" />
 				<h:inputText id="pass" value="#{loginBean.password}" />
 				</h:panelGrid>
-				<h:commandButton value="#{msg.boton_login}" action="#{loginBean.validar}"/> 
+				<h:commandButton value="#{msg.boton_login}" action="#{loginBean.validarPass}"/> 
 				<h:outputText styleClass="error" value="#{msg.error_usuario}" rendered="#{loginBean.error}"/>
 			</h:form></center>
 			</div>

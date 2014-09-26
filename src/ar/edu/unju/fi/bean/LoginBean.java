@@ -18,7 +18,7 @@ public class LoginBean {
 	public String rol;
 	public String error="false";	
 	
-	public String validar(){
+	public String validarPass(){
 		Usuario userLogueado=ManagerUsuario.validarUsuario(dni, password);
 		
 		
@@ -86,6 +86,7 @@ public class LoginBean {
 	public void setError(String error) {
 		this.error = error;
 	}
+
 	
 	
 	

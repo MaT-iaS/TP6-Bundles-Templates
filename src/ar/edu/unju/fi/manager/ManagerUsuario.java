@@ -24,7 +24,7 @@ public class ManagerUsuario {
 	
 	public static Usuario validarUsuario(Integer dni, String pass){
 		for (Usuario u : usuarios) {
-			if (u.getDocumento().equals(dni)&& u.getEstado().equals(EstadoUsuario.ACTIVO)){
+			if (u.getDocumento().equals(dni)&& u.getEstado().equals(EstadoUsuario.ACTIVO) && u.getPassword().equals(pass)){
 				return u;
 			}
 		}
