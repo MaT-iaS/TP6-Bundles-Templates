@@ -26,7 +26,7 @@ public class LoginBean {
 			nombre=userLogueado.getNombre();
 			apellido=userLogueado.getApellido();
 			rol=userLogueado.getRol().getDescripcion();
-			return "productList";
+			return "productList?faces-redirect=true";
 		}else{
 			error="true";
 			return null;

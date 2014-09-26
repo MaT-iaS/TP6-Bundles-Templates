@@ -42,8 +42,15 @@ public class ManagerProducto {
 		productos.add(p);
 	}
 	
-	public static void modificar(Producto p){
-		
+	public static void modificar(Producto prod){
+		Boolean done=false;
+		for (int i=0; i<productos.size()&&!done;i++) {
+			if(productos.get(i).getCodigo()==prod.getCodigo()){
+				productos.remove(i);
+				done=true;
+			}
+		}
+		productos.add(prod);
 	}
 	
 }

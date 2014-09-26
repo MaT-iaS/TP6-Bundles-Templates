@@ -16,7 +16,7 @@
 					<h:panelGrid columns="6"  >
 <!-- 						CODIGO -->
 						<h:outputText value="#{msg.label_codigo}"/>
-						<h:inputText id="campoCodigo" value="#{altaProdBean.producto.codigo}"/> 
+						<h:inputText id="campoCodigo" value="#{altaProdBean.producto.codigo}" disabled="#{altaProdBean.disableCodigo}"/> 
 
 <!-- 						NOMBRE -->
 					    <h:outputText value="#{msg.label_nombre}"/>

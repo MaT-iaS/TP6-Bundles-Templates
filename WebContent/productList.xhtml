@@ -61,6 +61,11 @@
 						<f:convertNumber pattern="$#,##0.00"/>				
 					</h:outputText>
 				</h:column>		
+				<h:column>
+					<h:commandButton value="#{msg.btn_modificar}" action="#{altaProdBean.preModif}" >
+						<f:setPropertyActionListener value="#{x}" target="#{altaProdBean.producto}"/>
+					</h:commandButton>
+				</h:column>
 			</h:dataTable>
 			</h:form>
 			</center>
