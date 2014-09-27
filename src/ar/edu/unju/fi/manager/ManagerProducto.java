@@ -27,21 +27,49 @@ public class ManagerProducto {
 		}
 	}
 
-	public static List<Producto> buscar(Integer codigo, String nombre, String estado){
-		List<Producto> encontrados=new ArrayList<Producto>();
-		
-		for(Producto p : productos){
-			if(p.getCodigo().equals(codigo) || (p.getNombre().contains(nombre)	&& !nombre.isEmpty()) || (p.getEstado().equals(estado) && !estado.equals("TODO")) ){
-				encontrados.add(p);
+//	BUSCA POR NOMBRE
+	public static List<Producto> buscarNombre(String nombre, String estado){
+		List<Producto> lista=new ArrayList<>(); 
+		for(Producto p :productos){
+			if(p.getNombre().contains(nombre.toUpperCase())&&(p.getEstado().equals(estado)||estado.equals("TODO") )){
+				lista.add(p);
 			}
 		}
-		return encontrados;
+		return lista;
 	}
 	
+//	BUSCA POR CODIGO
+	public static List<Producto> buscarCodigo(Integer codigo){
+		List<Producto> lista=new ArrayList<>();
+		for(Producto p :productos){
+			if(p.getCodigo()==codigo){
+				lista.add(p);
+			}
+		}
+		return lista;
+	}
+	
+//	BUSCA POR ESTADOD
+	public static List<Producto> buscarEstado(String estado){
+		List<Producto> lista=new ArrayList<>();
+		for(Producto p :productos){
+			if(p.getEstado().equals(estado)){
+				lista.add(p);
+			}
+		}
+		return lista;
+	}
+//	DEVUELVE TODOS LOS ELEMENTOS DE LA LISTA
+	public static List<Producto> getAll(){
+		return productos;
+	}
+	
+//	AGREGA ELEMENTOS A LA LISTA
 	public static void add(Producto p){
 		productos.add(p);
 	}
 	
+//	MODIFICA UN ELEMENTO DE LA LISTA
 	public static void modificar(Producto prod){
 		Boolean done=false;
 		for (int i=0; i<productos.size()&&!done;i++) {

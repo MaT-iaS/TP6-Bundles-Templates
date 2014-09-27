@@ -2,12 +2,10 @@ package ar.edu.unju.fi.bean;
 
 import java.io.Serializable;
 import java.util.List;
-
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-
 import ar.edu.unju.fi.manager.ManagerProducto;
 import ar.edu.unju.fi.model.Producto;
 
@@ -32,12 +30,23 @@ public class ProductListBean implements Serializable{
 	 */
 	public String search(){
 		System.out.println("-------Busqueda");
-		if(codigo.equals(0) && nombre.isEmpty() && estado.equals("TODO")){
-			productList = ManagerProducto.productos;
+//		BUSCAR POR CODIGO
+		if(codigo!=0){
+			productList=ManagerProducto.buscarCodigo(codigo);
 		}else{
-			productList=ManagerProducto.buscar(codigo, nombre, estado);
+//			BUSCAR POR NOMBRE
+			if(!nombre.isEmpty()){
+				productList=ManagerProducto.buscarNombre(nombre, estado);
+			}else{
+//				BUSCAR POR ESTADO
+				if(estado.equals("TODO")){
+					productList=ManagerProducto.getAll();
+				}else{
+					productList=ManagerProducto.buscarEstado(estado);
+				}
+			}
 		}
-					
+		
 		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Buscando Productos...", "Se realizó la búsqueda de productos");
         FacesContext.getCurrentInstance().addMessage(null, message);
 		return null;
